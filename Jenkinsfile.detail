@@ -5,7 +5,7 @@ pipeline {
         stage('Hello World') {
             steps {
                 script {
-                    load 'Jenkinsfile.detail'
+                    sh "echo 'Hello World'"
                 }
             }
         }
