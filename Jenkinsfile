@@ -1,4 +1,5 @@
 node {
-    sh 'env'
-    load "${WORKSPACE}@script/hello/Jenkinsfile"
+    withEnv(['NAME=Gergely']) {
+        load "${WORKSPACE}@script/hello/Jenkinsfile"
+    }
 }
