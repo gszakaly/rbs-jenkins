@@ -1,0 +1,16 @@
+def run(Map args) {
+    pipeline {
+        agent any
+        stages {
+            stage('hello') {
+                steps {
+                    script {
+                        sh "echo 'Hello World'"
+                    }
+                }
+            }
+        }
+    }
+}
+
+return this
