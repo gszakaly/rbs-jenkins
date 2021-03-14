@@ -4,10 +4,12 @@ pipeline {
     stages {
         stage('Hello World') {
             steps {
-                def util = load 'util.groovy'
-                def message = util.getMessage()
-            
-                sh "echo '${message}'"
+                script {
+                    def util = load 'util.groovy'
+                    def message = util.getMessage()
+                
+                    sh "echo '${message}'"
+                }
             }
         }
     }
