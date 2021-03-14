@@ -2,7 +2,7 @@ pipeline {
     agent {label 'master'}
 
     stages {
-        stage('Hello World') {
+        stage('load') {
             steps {
                 script {
                     load 'Jenkinsfile.detail'
