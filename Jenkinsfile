@@ -1,12 +1,9 @@
 pipeline {
-    agent {label 'master'}
-
+    agent any
     stages {
-        stage('load') {
+        stage('Hello World') {
             steps {
-                script {
-                    load 'Jenkinsfile.detail'
-                }
+                sh "echo 'Hello World'"
             }
         }
     }

@@ -1,8 +1,15 @@
-stages {
-    stage('hello-world') {
-        steps {
-            script {
-                sh "echo 'Hello World'"
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello World') {
+            steps {
+                script {
+                    def util = load 'util.groovy'
+                    def message = util.getMessage()
+                
+                    sh "echo '${message}'"
+                }
             }
         }
     }
