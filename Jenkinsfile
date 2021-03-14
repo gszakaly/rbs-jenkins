@@ -1,4 +1,4 @@
 node {
     sh 'env'
-    load 'hello/Jenkinsfile'
+    load "${WORKSPACE}@script/hello/Jenkinsfile"
 }
