@@ -7,7 +7,7 @@ pipeline {
     parameters { 
         extendedChoice( 
             name: 'NAMES_CHOICE',
-            value: names
+            value: names,
             defaultValue: '',
             multiSelectDelimiter: ',',
             visibleItemCount: namesLength,
