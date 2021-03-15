@@ -1,10 +1,24 @@
+
+def names = env.NAMES
+def namesLength = env.NAMES.split(',').length
+
 pipeline {
     agent any
+    parameters { 
+        extendedChoice( 
+            name: 'NAMES_CHOICE',
+            value: names
+            defaultValue: '',
+            multiSelectDelimiter: ',',
+            visibleItemCount: namesLength,
+            description: '',
+            type: 'PT_CHECKBOX')
+    }
     stages {
         stage('hello') {
             steps {
                 script {
-                    sh "echo 'Hello ${env.NAME}'"
+                    sh "echo 'Hello ${env.NAMES_CHOICE}'"
                 }
             }
         }
